@@ -18,7 +18,7 @@ Easy to use serialization library, built using faster-jackson.
 ```xml
 <dependency>
     <groupId>com.github.r3back</groupId>
-    <artifactId>dirty-serializer</artifactId>
+    <artifactId>fast-serializer</artifactId>
     <version>LATEST</version>
 </dependency>
 ```
@@ -35,7 +35,7 @@ repositories {
 
 ```groovy
 dependencies {
-    compileOnly 'com.github.r3back:dirty-serializer:LATEST'
+    compileOnly 'com.github.r3back:fast-serializer:LATEST'
 }
 ```
 
