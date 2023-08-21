@@ -1,4 +1,4 @@
-rootProject.name = "dirty-serializer"
-include (":dirty-core")
-include (":dirty-api")
+rootProject.name = "fast-serializer"
+include (":fast-serializer-api")
+include (":fast-serializer-core")
 

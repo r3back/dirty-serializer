@@ -1,8 +1,8 @@
-# Dirty Serializer
+# Fast Serializer
 Easy to use serialization library, built using faster-jackson.
 
-[![Java CI with Gradle](https://github.com/r3back/dirty-serializer/actions/workflows/gradle.yml/badge.svg)](https://github.com/r3back/dirty-serializer/actions/workflows/gradle.yml)
-[![](https://jitpack.io/v/r3back/dirty-serializer.svg)](https://jitpack.io/#r3back/dirty-serializer)
+[![Java CI with Gradle](https://github.com/r3back/fast-serializer/actions/workflows/gradle.yml/badge.svg)](https://github.com/r3back/fast-serializer/actions/workflows/gradle.yml)
+[![](https://jitpack.io/v/r3back/fast-serializer.svg)](https://jitpack.io/#r3back/fast-serializer)
 
 ## Dependency Usage
 
@@ -40,7 +40,7 @@ dependencies {
 ```
 
 ## Building
-Dirty-Serialization uses Gradle to handle dependencies & building.
+Fast-Serializer uses Gradle to handle dependencies & building.
 
 ## Used Tools
 * [FasterXML-Jackson](https://github.com/FasterXML/jackson) used to serialize/deserialize.
