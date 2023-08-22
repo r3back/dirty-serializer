@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qualityplus.fastserializer.api.type.SerializerType;
 import com.qualityplus.fastserializer.api.strategy.FileStrategy;
 import com.qualityplus.fastserializer.core.util.FileUtil;
-import io.vavr.control.Try;
+import com.qualityplus.fasttry.core.FastTry;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -34,31 +34,31 @@ public abstract class AbstractFileStrategy implements FileStrategy {
 
     @Override
     public <T> T loadFromString(final Class<T> clazz, final String content) {
-        return Try.of(() -> this.objectMapper.readValue(content, clazz))
+        return FastTry.of(() -> this.objectMapper.readValue(content, clazz))
                 .getOrElse(tryToInit(clazz));
     }
 
     @Override
     public String saveToString(final Object instance) {
-        return Try.of(() -> this.objectMapper.writeValueAsString(instance))
+        return FastTry.of(() -> this.objectMapper.writeValueAsString(instance))
                 .getOrElse(EMPTY_STRING);
     }
 
     @Override
     public <T> T loadFromFile(final Class<T> clazz, final File file) {
-        return Try.of(() -> this.objectMapper.readValue(file, clazz))
+        return FastTry.of(() -> this.objectMapper.readValue(file, clazz))
                 .getOrElse(tryToInit(clazz));
     }
 
     @Override
     public File saveToFile(final Object object, final File file) {
-        Try.run(() -> this.objectMapper.writeValue(file, object))
-                        .onFailure(e -> log.error(SAVE_FILE_ERROR_MESSAGE, e));
+        FastTry.of(() -> this.objectMapper.writeValue(file, object));
+                        //.onFailure(e -> log.error(SAVE_FILE_ERROR_MESSAGE, e));
         return file;
     }
 
     private <T> T tryToInit(final Class<T> clazz) {
-        return Try.of(clazz::newInstance)
+        return FastTry.of(clazz::newInstance)
                 .getOrElse((T) null);
     }
 

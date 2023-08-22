@@ -8,6 +8,7 @@ version = rootProject.version
 
 dependencies {
     implementation(project(":fast-serializer-api"))
+    implementation("com.github.r3back:fast-try:0.0.6")
 
     implementation("junit:junit:4.13.2")
 

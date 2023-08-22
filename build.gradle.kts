@@ -29,6 +29,9 @@ subprojects{
 
     repositories {
         mavenCentral()
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 
     dependencies {
@@ -36,6 +39,9 @@ subprojects{
         annotationProcessor("org.projectlombok:lombok:1.18.22")
     }
 
-
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
 }
 
